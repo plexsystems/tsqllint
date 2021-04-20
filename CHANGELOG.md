@@ -1,3 +1,20 @@
+# Changelog
+
+## 2.0.0
+
+Forked from [tsqllint](https://github.com/tsqllint/tsqllint).
+
+### Changed
+
+* Change `TSQLLint.Console` package ID to `TSQLLint.Console.Plex`
+* Update all projects to `net5.0`
+* Pack as a [.NET Tool](https://docs.microsoft.com/en-us/dotnet/core/tools/global-tools)
+
+## Fixed
+
+* Seek file stream to position 0 beginning before passing it to plugins
+* `TSQLLint.Tests.FunctionalTests.ConsoleAppTests.LoadPluginTest` is no longer dependent on a specific version number
+
 <a name="1.11.1"></a>
 ## <small>1.11.1 (2018-06-14)</small>
 
