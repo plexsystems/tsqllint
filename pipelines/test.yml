@@ -1,4 +1,5 @@
 pool: Plex Hosted Ubuntu 1604
+trigger: none
 
 steps:
   - task: UseDotNet@2
