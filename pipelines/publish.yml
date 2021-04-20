@@ -1,0 +1,30 @@
+pool: Plex Hosted Ubuntu 1604
+
+trigger:
+  tags:
+    include:
+      - v*
+
+resources:
+  repositories:
+    - repository: templates
+      type: git
+      name: DevOps/azure-pipelines-build
+
+steps:
+  - task: UseDotNet@2
+    inputs:
+      version: "5.0.x"
+      packageType: sdk
+  - task: DotNetCoreCLI@2
+    inputs:
+      command: test
+      workingDirectory: source/
+  - task: DotNetCoreCLI@2
+    inputs:
+      command: pack
+      configuration: Release
+      projects: source/TSQLLint.Console
+  - template: publish/nuget-push.yml@templates
+    parameters:
+      nugetPackageId: TSQLLint.Console.Plex
