@@ -145,6 +145,7 @@ namespace TSQLLint.Infrastructure.Parser
 
         private void ProcessPlugins(Stream fileStream, IEnumerable<IRuleException> ignoredRules, string filePath)
         {
+            fileStream.Seek(0, SeekOrigin.Begin);
             TextReader textReader = new StreamReader(fileStream);
             pluginHandler.ActivatePlugins(new PluginContext(filePath, ignoredRules, textReader));
         }
