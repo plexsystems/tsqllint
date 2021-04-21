@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.0.0
+## 2.0.0 - Plex fork
 
 Forked from [tsqllint](https://github.com/tsqllint/tsqllint).
 
