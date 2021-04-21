@@ -1,6 +1,5 @@
 using System;
 using System.Reflection;
-using Microsoft.VisualStudio.TestPlatform.PlatformAbstractions;
 using NUnit.Framework;
 using TSQLLint.Infrastructure.Plugins;
 
@@ -12,7 +11,7 @@ namespace TSQLLint.Tests.UnitTests.PluginHandler
         {
             get
             {
-                var codeBase = Assembly.GetExecutingAssembly().GetAssemblyLocation();
+                var codeBase = Assembly.GetExecutingAssembly().Location;
                 var uri = new UriBuilder(codeBase);
                 return Uri.UnescapeDataString(uri.Path);
             }
