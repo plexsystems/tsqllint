@@ -31,4 +31,4 @@ steps:
   - template: publish/nuget-push.yml@templates
     parameters:
       nugetPackageId: TSQLLint.Console.Plex
-      pathToNupkg: publish/TSQLLint.Console.Plex.*.nupkg
+      pathToNupkg: $(Build.ArtifactStagingDirectory)/TSQLLint.Console.Plex.*.nupkg
