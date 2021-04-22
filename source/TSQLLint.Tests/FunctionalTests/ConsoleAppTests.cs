@@ -80,14 +80,14 @@ namespace TSQLLint.Tests.FunctionalTests
             Assert.IsTrue(fileLinted);
         }
 
-        [TestCase(@"-l", "Loaded plugin: 'TSQLLint.Tests.UnitTests.PluginHandler.TestPlugin', Version: '1.11.0.0'", 0)]
+        [TestCase(@"-l", "Loaded plugin: 'TSQLLint.Tests.UnitTests.PluginHandler.TestPlugin', Version: ", 0)]
         public void LoadPluginTest(string testArgs, string expectedMessage, int expectedExitCode)
         {
             var pluginLoaded = false;
 
             void OutputHandler(object sender, DataReceivedEventArgs args)
             {
-                if (args.Data != null && args.Data.Contains(expectedMessage))
+                if (args.Data != null && args.Data.StartsWith(expectedMessage, StringComparison.InvariantCultureIgnoreCase))
                 {
                     pluginLoaded = true;
                 }

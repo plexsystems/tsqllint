@@ -1,4 +1,3 @@
-using System;
 using System.Reflection;
 using NUnit.Framework;
 using TSQLLint.Infrastructure.Plugins;
@@ -7,15 +6,7 @@ namespace TSQLLint.Tests.UnitTests.PluginHandler
 {
     public class AssemblyWrapperTests
     {
-        public static string AssemblyPath
-        {
-            get
-            {
-                var codeBase = Assembly.GetExecutingAssembly().CodeBase;
-                var uri = new UriBuilder(codeBase);
-                return Uri.UnescapeDataString(uri.Path);
-            }
-        }
+        public static string AssemblyPath => Assembly.GetExecutingAssembly().Location;
 
         [Test]
         public void AssemblyWrapper_LoadFile_ShouldLoadTestAssembly()
