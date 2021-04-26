@@ -6,21 +6,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TSQLLint.Console", "TSQLLin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TSQLLint.Tests", "TSQLLint.Tests\TSQLLint.Tests.csproj", "{B3139814-0754-4549-BC6D-9D4F4C772056}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{396E960A-A8E0-4636-A790-457CB273976B}"
-	ProjectSection(SolutionItems) = preProject
-		.editorconfig = .editorconfig
-		.gitignore = .gitignore
-		.npmignore = .npmignore
-		.travis.yml = .travis.yml
-		appveyor.yml = appveyor.yml
-		CODE_OF_CONDUCT.md = CODE_OF_CONDUCT.md
-		codecov.yml = codecov.yml
-		CONTRIBUTING.MD = CONTRIBUTING.MD
-		LICENSE = LICENSE
-		package.json = package.json
-		README.md = README.md
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TSQLLint.Infrastructure", "TSQLLint.Infrastructure\TSQLLint.Infrastructure.csproj", "{7BF3E473-D00C-49A0-ADD8-7D0177B30AB3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TSQLLint.Core", "TSQLLint.Core\TSQLLint.Core.csproj", "{28E4C305-8BEC-4CF1-A5EE-D6624DE66154}"
