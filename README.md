@@ -1,15 +1,26 @@
-# TSQLLint
+# TSQLLint (Plex fork)
 
 TSQLLint is a tool for describing, identifying, and reporting the presence of anti-patterns in TSQL scripts.
 
+## Changes from [upstream version](https://github.com/tsqllint/tsqllint)
+
+* Update to .NET Core 5.0
+* Pack as a [.NET tool](https://docs.microsoft.com/en-us/dotnet/core/tools/global-tools)
+
 ## Installation
 
-The recommended method of installing tsqllint is to install the tool globally using NPM.
+TSQLLint can be installed as a .NET Core tool, either globally or as a local tool
+within a project.
 
-This binary can be installed though [the `npm` registry](https://www.npmjs.com/). First, install [Node.js version 4 or higher](https://nodejs.org/en/download/), and then install using the [`npm install` command](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):
+```bash
+# Global installation
+dotnet tool install --global TSQLLint.Console.Plex
+# Run as 'tsqllint'
 
-``` bash
-npm install tsqllint -g
+# Local installation within a project
+dotnet new tool-manifest
+dotnet tool install TSQLLint.Console.Plex
+# Run as 'dotnet tsqllint' or 'dotnet tool run tsqllint'
 ```
 
 ## Usage
@@ -41,7 +52,7 @@ tsqllint --list-plugins
 
 ### Visual Studio Code Extension
 
-In addition to the CLI tool, TSQLLint is built into a [Visual Studio Code Extension](https://marketplace.visualstudio.com/items?itemName=tsqllint.tsqllint). This extension can be installed from within the VS Code Extension Interface or from the VS Code Extension marketplace.
+In addition to the CLI tool, TSQLLint is built into a [Visual Studio Code Extension](https://github.com/plexsystems/tsqllint-vscode-extension). This extension can be installed from within the VS Code Extension Interface or from the VS Code Extension marketplace.
 
 ![Usage Example](documentation/usage-animation.gif?raw=true)
 
