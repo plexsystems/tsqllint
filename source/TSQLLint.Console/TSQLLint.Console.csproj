@@ -24,8 +24,6 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="2.1.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="2.1.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.1.0" />
-    <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta007" />
-    <PackageReference Include="TSQLLint.Common" Version="2.0.0" />
     <PackageReference Include="Mono.Cecil" Version="0.10.0" />
   </ItemGroup>
 
@@ -35,15 +33,8 @@
     <NoWarn>NU1701;NU1702;NU1705</NoWarn>
   </PropertyGroup>
 
-  <PropertyGroup>
-      <CodeAnalysisRuleSet>..\.stylecop\stylecop.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-
   <ItemGroup>
-    <Folder Include="Properties" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\TSQLLint.Common\TSQLLint.Common.csproj" />
     <ProjectReference Include="..\TSQLLint.Core\TSQLLint.Core.csproj" />
     <ProjectReference Include="..\TSQLLint.Infrastructure\TSQLLint.Infrastructure.csproj" />
   </ItemGroup>

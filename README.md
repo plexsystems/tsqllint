@@ -1,23 +1,26 @@
-[![Build Status](https://travis-ci.org/tsqllint/tsqllint.svg?branch=master)](https://travis-ci.org/tsqllint/tsqllint)
-[![Build Status](https://ci.appveyor.com/api/projects/status/github/tsqllint/tsqllint?svg=true&branch=master)](https://ci.appveyor.com/project/nathan-boyd/tsqllint)
-[![codecov](https://codecov.io/gh/tsqllint/tsqllint/branch/master/graph/badge.svg)](https://codecov.io/gh/tsqllint/tsqllint)  
+# TSQLLint (Plex fork)
 
-[![npm version](https://badge.fury.io/js/tsqllint.svg)](https://badge.fury.io/js/tsqllint)
-[![npm](https://img.shields.io/npm/dt/tsqllint.svg)](https://www.npmjs.com/package/tsqllint)
-[![Gitter chat](https://img.shields.io/gitter/room/badges/shields.svg)](https://gitter.im/TSQLLint/Lobby)
+TSQLLint is a tool for describing, identifying, and reporting the presence of anti-patterns in TSQL scripts.
 
-# TSQLLint
+## Changes from [upstream version](https://github.com/tsqllint/tsqllint)
 
-TSQLLint is a tool for describing, identifying, and reporting the presence o anti-patterns in TSQL scripts.
+* Update to .NET Core 5.0
+* Pack as a [.NET tool](https://docs.microsoft.com/en-us/dotnet/core/tools/global-tools)
 
 ## Installation
 
-The recommended method of installing tsqllint is to install the tool globally using NPM.
+TSQLLint can be installed as a .NET Core tool, either globally or as a local tool
+within a project.
 
-This binary can be installed though [the `npm` registry](https://www.npmjs.com/). First, install [Node.js version 4 or higher](https://nodejs.org/en/download/), and then install using the [`npm install` command](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):
+```bash
+# Global installation
+dotnet tool install --global TSQLLint.Console.Plex
+# Run as 'tsqllint'
 
-``` bash
-npm install tsqllint -g
+# Local installation within a project
+dotnet new tool-manifest
+dotnet tool install TSQLLint.Console.Plex
+# Run as 'dotnet tsqllint' or 'dotnet tool run tsqllint'
 ```
 
 ## Usage
@@ -49,7 +52,7 @@ tsqllint --list-plugins
 
 ### Visual Studio Code Extension
 
-In addition to the CLI tool, TSQLLint is built into a [Visual Studio Code Extension](https://marketplace.visualstudio.com/items?itemName=tsqllint.tsqllint). This extension can be installed from within the VS Code Extension Interface or from the VS Code Extension marketplace.
+In addition to the CLI tool, TSQLLint is built into a [Visual Studio Code Extension](https://github.com/plexsystems/tsqllint-vscode-extension). This extension can be installed from within the VS Code Extension Interface or from the VS Code Extension marketplace.
 
 ![Usage Example](documentation/usage-animation.gif?raw=true)
 
@@ -153,7 +156,7 @@ SELECT * FROM FOO;
 ```
 ## SQL Compatibility Level
 
-TSQLLint provides a configurable "compatibility-level" that aligns with [SQL Server's Compatibility Level](http://docs.microsoft.com/en-us/sql/relational-databases/databases/view-or-change-the-compatibility-level-of-a-database). The value defaults to 120 but may be changed with the following edit to the `.tsqllintrc` or by using inline comments withing the SQL file. TSQLLint supports the following compatibility levels  80, 90, 100, 110, 120, 130, and 140. 
+TSQLLint provides a configurable "compatibility-level" that aligns with [SQL Server's Compatibility Level](http://docs.microsoft.com/en-us/sql/relational-databases/databases/view-or-change-the-compatibility-level-of-a-database). The value defaults to 120 but may be changed with the following edit to the `.tsqllintrc` or by using inline comments withing the SQL file. TSQLLint supports the following compatibility levels  80, 90, 100, 110, 120, 130, and 140.
 
 ### Setting a default Compatability Level using .tsqllintrc
 
